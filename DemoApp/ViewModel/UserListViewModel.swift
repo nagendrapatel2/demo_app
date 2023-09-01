@@ -7,19 +7,24 @@
 
 import SwiftUI
 import Combine
-@MainActor
 class UserListViewModel : ObservableObject {
     @Published  var usersList = [User]()
     @Published private(set) var state = LoadingState<Void>.idle
-     func getUsersList() async {
-        // state = .loading
-        do {
-            usersList = try await UserListWebService().fetchUserList()
-            print("djhfdsjhfjsddddd")
-            state = .loaded
-        } catch (let error){
-            print("djhfdsjhfjsdddddddeee")
-           state = .failed(error)
+    //get userList data from Server
+    func getUsersList() {
+        Task { @MainActor in
+            state = .loading
+            do {
+                usersList = try await UserListWebService().fetchUserList()
+                state = .loaded
+            } catch (let error){
+                state = .failed(error)
+            }
         }
+    }
+    // refresh Data
+    @Sendable
+    func refreshData() {
+        getUsersList()
     }
 }

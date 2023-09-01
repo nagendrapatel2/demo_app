@@ -12,7 +12,7 @@ struct Users: Codable {
     let time, message: String
     let totalUsers, offset, limit: Int
     let users: [User]
-
+    
     enum CodingKeys: String, CodingKey {
         case success, time, message
         case totalUsers = "total_users"
@@ -30,7 +30,7 @@ struct User: Codable ,Identifiable {
     let firstName, lastName, email, phone: String
     let street, state, country: String
     let longitude: Double
-
+    
     enum CodingKeys: String, CodingKey {
         case gender, id
         case dateOfBirth = "date_of_birth"

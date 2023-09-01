@@ -12,16 +12,16 @@ protocol UserListRepository: WebRepository {
 }
 
 struct UserListWebService: UserListRepository {
-   
-    let baseURL: String = "https://api.slingacademy.com/v1/sample-data"//AppEnvironment.baseURL + "/da-approvals-az"
+    
+    let baseURL: String = AppEnvironment.baseURL + "/v1/sample-data"
     let session: URLSession
     init(session: URLSession = .shared) {
         self.session = session
     }
     func fetchUserList() async throws -> [User] {
         let response: Users = try await request(
-                    endpoint: MyUserAPI.fetchUserList
-                )
+            endpoint: MyUserAPI.fetchUserList
+        )
         return response.users
     }
 }
@@ -41,13 +41,13 @@ extension UserListWebService {
             case .fetchUserList: return "GET"
             }
         }
-            var headers: [String : String]? {
-                nil
-            }
-            
-            func body() throws -> Data? {
-                nil
-            }
+        var headers: [String : String]? {
+            nil
+        }
+        
+        func body() throws -> Data? {
+            nil
         }
     }
+}
 

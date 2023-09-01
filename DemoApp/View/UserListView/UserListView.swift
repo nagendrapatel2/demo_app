@@ -6,41 +6,34 @@
 //
 
 import SwiftUI
-
 struct UserListView: View {
     @StateObject private var userListViewModel = UserListViewModel()
     var body: some View {
         switch userListViewModel.state {
         case .idle:
             Color.clear.task {
-                    await userListViewModel.getUsersList()
-                }
+                 userListViewModel.getUsersList()
+            }
         case .loading:
             ProgressView()
         case .failed(let error):
-                VStack {
-                    Text("⚠️ \(error.localizedDescription)")
-                        .multilineTextAlignment(.center)
-                        .padding()
-
-                   
-                }
-                .padding()
-            
-         
+            VStack {
+                Text("⚠️ \(error.localizedDescription)")
+                    .multilineTextAlignment(.center)
+                    .padding()
+            }
+            .padding()
         case .loaded:
             NavigationView {
                 List {
                     ForEach (userListViewModel.usersList) { user in
                         UserListCellView(user: user)
-                        }
+                    }
                 }
+                .refreshable(action:  userListViewModel.refreshData)
                 .navigationBarTitle(Text("User List"))
-                }
+            }
         }
-        
-        
-        
     }
 }
 

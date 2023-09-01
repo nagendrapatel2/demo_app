@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct UserDetailView: View {
     let selectedUser: User
     var body: some View {
@@ -16,7 +15,6 @@ struct UserDetailView: View {
                 Text("ID : \(selectedUser.id)")
                 Text("Job : " +  selectedUser.job)
                 Text("Email : " +  selectedUser.email)
-                Text("DateOfBirth : " +  selectedUser.dateOfBirth)
                 Text("Gender : " +  selectedUser.gender.rawValue)
                 Text("Street : " +  selectedUser.street)
                 Text("City : " +  selectedUser.city)
@@ -24,5 +22,11 @@ struct UserDetailView: View {
                 Text("Country : " +  selectedUser.country)
             }
         }
+    }
+}
+
+struct UserDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        UserDetailView(selectedUser: User.preview)
     }
 }

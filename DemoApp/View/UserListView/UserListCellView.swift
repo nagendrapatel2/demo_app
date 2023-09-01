@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct UserListCellView: View {
     var user: User
     var body: some View {
