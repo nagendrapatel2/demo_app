@@ -7,38 +7,23 @@
 
 import SwiftUI
 struct UserListView: View {
-    @StateObject private var userListViewModel = UserListViewModel()
+    @StateObject  var userListViewModel = UserListViewModel()
     var body: some View {
         switch userListViewModel.state {
-        case .idle:
-            Color.clear.task {
-                 userListViewModel.getUsersList()
-            }
-        case .loading:
-            ProgressView()
-        case .failed(let error):
-            VStack {
-                Text("⚠️ \(error.localizedDescription)")
-                    .multilineTextAlignment(.center)
-                    .padding()
-            }
-            .padding()
-        case .loaded:
-            NavigationView {
-                List {
-                    ForEach (userListViewModel.usersList) { user in
-                        UserListCellView(user: user)
-                    }
+               case .idle:
+                    Color.clear.task { userListViewModel.refreshData()}
+                case .loading:
+                    ProgressView()
+                case .failed(let error):
+                    ErrorView(errorMessage: userListViewModel.getErrorMessage(for: error))
+                case .loaded:
+                    UserListViewContent(userListViewModel: userListViewModel)
                 }
-                .refreshable(action:  userListViewModel.refreshData)
-                .navigationBarTitle(Text("User List"))
-            }
-        }
     }
 }
 
 struct UserListView_Previews: PreviewProvider {
     static var previews: some View {
-        UserListView()
+        UserListView(userListViewModel: PreviewData(userList: [User.preview], state: .loaded))
     }
 }

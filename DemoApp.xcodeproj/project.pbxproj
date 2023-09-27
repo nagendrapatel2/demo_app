@@ -26,6 +26,8 @@
 		856BAD0A2AA0B70000F6B81C /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856BAD092AA0B70000F6B81C /* LoadingState.swift */; };
 		85D56E962AA19C24003FAEB9 /* AppServices+Preview.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D56E952AA19C24003FAEB9 /* AppServices+Preview.swift.swift */; };
 		85D56E9D2AA1D672003FAEB9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D56E9C2AA1D672003FAEB9 /* Environment.swift */; };
+		85F2F6A42AC32825007B4DD6 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2F6A32AC32825007B4DD6 /* ErrorView.swift */; };
+		85F2F6A62AC32AA9007B4DD6 /* UserListViewContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2F6A52AC32AA9007B4DD6 /* UserListViewContent.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,7 @@
 		187035A22AA07F7900A32210 /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		187035A42AA0810F00A32210 /* UserWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserWebService.swift; sourceTree = "<group>"; };
 		187035A62AA0892C00A32210 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		856540FD2AC3ED4F00EDC51F /* Development.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = Development.xctestplan; sourceTree = "<group>"; };
 		856BAD002AA0A96300F6B81C /* UserListCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCellView.swift; sourceTree = "<group>"; };
 		856BAD032AA0AA5100F6B81C /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		856BAD072AA0AB4A00F6B81C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
@@ -73,6 +76,8 @@
 		85D56E9A2AA1D62E003FAEB9 /* Testing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Testing.xcconfig; sourceTree = "<group>"; };
 		85D56E9B2AA1D64B003FAEB9 /* Production.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Production.xcconfig; sourceTree = "<group>"; };
 		85D56E9C2AA1D672003FAEB9 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		85F2F6A32AC32825007B4DD6 /* ErrorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorView.swift; sourceTree = "<group>"; };
+		85F2F6A52AC32AA9007B4DD6 /* UserListViewContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewContent.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +108,7 @@
 		187035592AA0503800A32210 = {
 			isa = PBXGroup;
 			children = (
+				856540FD2AC3ED4F00EDC51F /* Development.xctestplan */,
 				187035642AA0503800A32210 /* DemoApp */,
 				187035762AA0503B00A32210 /* DemoAppTests */,
 				187035802AA0503B00A32210 /* DemoAppUITests */,
@@ -249,6 +255,7 @@
 			children = (
 				856BAD002AA0A96300F6B81C /* UserListCellView.swift */,
 				187035982AA0574400A32210 /* UserListView.swift */,
+				85F2F6A52AC32AA9007B4DD6 /* UserListViewContent.swift */,
 			);
 			path = UserListView;
 			sourceTree = "<group>";
@@ -257,6 +264,7 @@
 			isa = PBXGroup;
 			children = (
 				856BAD072AA0AB4A00F6B81C /* UserView.swift */,
+				85F2F6A32AC32825007B4DD6 /* ErrorView.swift */,
 			);
 			path = ReusableView;
 			sourceTree = "<group>";
@@ -396,11 +404,13 @@
 				187035972AA056E700A32210 /* Users.swift in Sources */,
 				187035662AA0503800A32210 /* DemoAppApp.swift in Sources */,
 				85D56E9D2AA1D672003FAEB9 /* Environment.swift in Sources */,
+				85F2F6A62AC32AA9007B4DD6 /* UserListViewContent.swift in Sources */,
 				187035992AA0574400A32210 /* UserListView.swift in Sources */,
 				1870359B2AA0576200A32210 /* UserListViewModel.swift in Sources */,
 				187035A52AA0810F00A32210 /* UserWebService.swift in Sources */,
 				187035A32AA07F7900A32210 /* APIError.swift in Sources */,
 				856BAD012AA0A96300F6B81C /* UserListCellView.swift in Sources */,
+				85F2F6A42AC32825007B4DD6 /* ErrorView.swift in Sources */,
 				1870359F2AA07E7C00A32210 /* APIClient.swift in Sources */,
 				856BAD042AA0AA5100F6B81C /* UserDetailView.swift in Sources */,
 				85D56E962AA19C24003FAEB9 /* AppServices+Preview.swift.swift in Sources */,

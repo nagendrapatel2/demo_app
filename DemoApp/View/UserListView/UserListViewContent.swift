@@ -1,0 +1,28 @@
+//
+//  UserListViewContent.swift
+//  DemoApp
+//
+//  Created by Nagendra on 26/09/23.
+//
+
+import SwiftUI
+struct UserListViewContent: View {
+    @ObservedObject var userListViewModel: UserListViewModel
+    var body: some View {
+        NavigationStack {
+            List {
+                ForEach(userListViewModel.usersList) { user in
+                    UserListCellView(user: user)
+                }
+            }
+            .refreshable(action: userListViewModel.refreshData)
+            .navigationBarTitle(Text("User List"))
+        }
+    }
+}
+
+struct UserListViewContent_Previews: PreviewProvider {
+    static var previews: some View {
+        UserListViewContent(userListViewModel: PreviewData(userList: [User.preview]))
+    }
+}

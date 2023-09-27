@@ -16,7 +16,7 @@ struct PreviewNetwork: UserListRepository {
 }
 
 extension User {
-    static let preview = User(gender: Gender.female, id: 1, dateOfBirth: "1924-05-14T00:00:00", job: "Herbalist", city: "Humphreyfurt", zipcode: "79574", latitude: 112.16014, profilePicture: "https://api.slingacademy.com/public/sample-users/1.png", firstName: "Kayla", lastName: "Lopez", email: "kayla.lopez.1@slingacademy.com", phone: "800-865-4932", street: "", state: "4564 Gamble Light", country: "Greenland", longitude: 112.16014)
+    static let preview = User(gender: Gender.female, id: 1, dateOfBirth: "1924-05-14T00:00:00", job: "Herbalist", city: "Humphreyfurt", zipcode: "79574", latitude: 112.16014, profilePicture: "https://api.slingacademy.com/public/sample-users/1.png", firstName: "Kayla", lastName: "Lopez", email: "kayla.lopez.1@slingacademy.com", phone: "800-865-4932", street: "3388 Roger Wells Apt", state: "4564 Gamble Light", country: "Greenland", longitude: 112.16014)
 }
 extension PreviewNetwork {
     static var userMockResponse: Data = """
@@ -136,4 +136,22 @@ extension PreviewNetwork {
             "country": "Angola",
             "longitude": -141.625538}]}
             """.data(using: .utf8)!
+}
+
+
+class PreviewData : UserListViewModel {
+    init(userList : [User],state : LoadingState<Void> = LoadingState<Void>.idle) {
+        super.init(userListWebService: MockUserListService())
+        self.usersList = userList
+        self.state = state
+    }
+}
+
+struct MockUserListService : UserListRepository {
+    var session: URLSession = .shared
+    var baseURL: String = ""
+    var resultForResponse : Result <[User] ,Error> = .success([User.preview])
+    func fetchUserList() async throws -> [User] {
+        try resultForResponse.get()
+    }
 }
