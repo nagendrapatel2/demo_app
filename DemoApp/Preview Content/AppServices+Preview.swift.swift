@@ -146,12 +146,3 @@ class PreviewData : UserListViewModel {
         self.state = state
     }
 }
-
-struct MockUserListService : UserListRepository {
-    var session: URLSession = .shared
-    var baseURL: String = ""
-    var resultForResponse : Result <[User] ,Error> = .success([User.preview])
-    func fetchUserList() async throws -> [User] {
-        try resultForResponse.get()
-    }
-}

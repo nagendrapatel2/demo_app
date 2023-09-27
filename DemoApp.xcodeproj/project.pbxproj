@@ -11,8 +11,6 @@
 		1870356A2AA0503B00A32210 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 187035692AA0503B00A32210 /* Assets.xcassets */; };
 		1870356E2AA0503B00A32210 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1870356D2AA0503B00A32210 /* Preview Assets.xcassets */; };
 		187035782AA0503B00A32210 /* UserListViewModelTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187035772AA0503B00A32210 /* UserListViewModelTest.swift */; };
-		187035822AA0503B00A32210 /* DemoAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187035812AA0503B00A32210 /* DemoAppUITests.swift */; };
-		187035842AA0503B00A32210 /* DemoAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187035832AA0503B00A32210 /* DemoAppUITestsLaunchTests.swift */; };
 		187035972AA056E700A32210 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187035962AA056E700A32210 /* Users.swift */; };
 		187035992AA0574400A32210 /* UserListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 187035982AA0574400A32210 /* UserListView.swift */; };
 		1870359B2AA0576200A32210 /* UserListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1870359A2AA0576200A32210 /* UserListViewModel.swift */; };
@@ -24,6 +22,9 @@
 		856BAD042AA0AA5100F6B81C /* UserDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856BAD032AA0AA5100F6B81C /* UserDetailView.swift */; };
 		856BAD082AA0AB4A00F6B81C /* UserView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856BAD072AA0AB4A00F6B81C /* UserView.swift */; };
 		856BAD0A2AA0B70000F6B81C /* LoadingState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 856BAD092AA0B70000F6B81C /* LoadingState.swift */; };
+		85B93A4D2AC44C520093EF9C /* UserListViewUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B93A4C2AC44C520093EF9C /* UserListViewUITests.swift */; };
+		85B93A502AC44DCB0093EF9C /* UITestingHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B93A4F2AC44DCB0093EF9C /* UITestingHelper.swift */; };
+		85B93A532AC4529E0093EF9C /* MockDataUserList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B93A522AC4529E0093EF9C /* MockDataUserList.swift */; };
 		85D56E962AA19C24003FAEB9 /* AppServices+Preview.swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D56E952AA19C24003FAEB9 /* AppServices+Preview.swift.swift */; };
 		85D56E9D2AA1D672003FAEB9 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85D56E9C2AA1D672003FAEB9 /* Environment.swift */; };
 		85F2F6A42AC32825007B4DD6 /* ErrorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85F2F6A32AC32825007B4DD6 /* ErrorView.swift */; };
@@ -56,8 +57,6 @@
 		187035732AA0503B00A32210 /* DemoAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		187035772AA0503B00A32210 /* UserListViewModelTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModelTest.swift; sourceTree = "<group>"; };
 		1870357D2AA0503B00A32210 /* DemoAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DemoAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		187035812AA0503B00A32210 /* DemoAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppUITests.swift; sourceTree = "<group>"; };
-		187035832AA0503B00A32210 /* DemoAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		187035962AA056E700A32210 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		187035982AA0574400A32210 /* UserListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListView.swift; sourceTree = "<group>"; };
 		1870359A2AA0576200A32210 /* UserListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewModel.swift; sourceTree = "<group>"; };
@@ -71,6 +70,9 @@
 		856BAD032AA0AA5100F6B81C /* UserDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDetailView.swift; sourceTree = "<group>"; };
 		856BAD072AA0AB4A00F6B81C /* UserView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserView.swift; sourceTree = "<group>"; };
 		856BAD092AA0B70000F6B81C /* LoadingState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingState.swift; sourceTree = "<group>"; };
+		85B93A4C2AC44C520093EF9C /* UserListViewUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListViewUITests.swift; sourceTree = "<group>"; };
+		85B93A4F2AC44DCB0093EF9C /* UITestingHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestingHelper.swift; sourceTree = "<group>"; };
+		85B93A522AC4529E0093EF9C /* MockDataUserList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataUserList.swift; sourceTree = "<group>"; };
 		85D56E952AA19C24003FAEB9 /* AppServices+Preview.swift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppServices+Preview.swift.swift"; sourceTree = "<group>"; };
 		85D56E992AA1D606003FAEB9 /* Development.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Development.xcconfig; sourceTree = "<group>"; };
 		85D56E9A2AA1D62E003FAEB9 /* Testing.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Testing.xcconfig; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 		187035642AA0503800A32210 /* DemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				85B93A4E2AC44D8C0093EF9C /* UITesting */,
 				187035A62AA0892C00A32210 /* Info.plist */,
 				1870359D2AA07E4600A32210 /* Utilities */,
 				1870359C2AA057D900A32210 /* Application */,
@@ -164,8 +167,7 @@
 		187035802AA0503B00A32210 /* DemoAppUITests */ = {
 			isa = PBXGroup;
 			children = (
-				187035812AA0503B00A32210 /* DemoAppUITests.swift */,
-				187035832AA0503B00A32210 /* DemoAppUITestsLaunchTests.swift */,
+				85B93A4C2AC44C520093EF9C /* UserListViewUITests.swift */,
 			);
 			path = DemoAppUITests;
 			sourceTree = "<group>";
@@ -269,6 +271,23 @@
 			path = ReusableView;
 			sourceTree = "<group>";
 		};
+		85B93A4E2AC44D8C0093EF9C /* UITesting */ = {
+			isa = PBXGroup;
+			children = (
+				85B93A512AC452760093EF9C /* MockData */,
+				85B93A4F2AC44DCB0093EF9C /* UITestingHelper.swift */,
+			);
+			path = UITesting;
+			sourceTree = "<group>";
+		};
+		85B93A512AC452760093EF9C /* MockData */ = {
+			isa = PBXGroup;
+			children = (
+				85B93A522AC4529E0093EF9C /* MockDataUserList.swift */,
+			);
+			path = MockData;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -344,6 +363,7 @@
 					};
 					1870357C2AA0503B00A32210 = {
 						CreatedOnToolsVersion = 14.3.1;
+						LastSwiftMigration = 1430;
 						TestTargetID = 187035612AA0503800A32210;
 					};
 				};
@@ -407,6 +427,7 @@
 				85F2F6A62AC32AA9007B4DD6 /* UserListViewContent.swift in Sources */,
 				187035992AA0574400A32210 /* UserListView.swift in Sources */,
 				1870359B2AA0576200A32210 /* UserListViewModel.swift in Sources */,
+				85B93A532AC4529E0093EF9C /* MockDataUserList.swift in Sources */,
 				187035A52AA0810F00A32210 /* UserWebService.swift in Sources */,
 				187035A32AA07F7900A32210 /* APIError.swift in Sources */,
 				856BAD012AA0A96300F6B81C /* UserListCellView.swift in Sources */,
@@ -415,6 +436,7 @@
 				856BAD042AA0AA5100F6B81C /* UserDetailView.swift in Sources */,
 				85D56E962AA19C24003FAEB9 /* AppServices+Preview.swift.swift in Sources */,
 				187035A12AA07EED00A32210 /* WebRepository.swift in Sources */,
+				85B93A502AC44DCB0093EF9C /* UITestingHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -430,8 +452,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				187035822AA0503B00A32210 /* DemoAppUITests.swift in Sources */,
-				187035842AA0503B00A32210 /* DemoAppUITestsLaunchTests.swift in Sources */,
+				85B93A4D2AC44C520093EF9C /* UserListViewUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -686,6 +707,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -697,6 +719,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = DemoApp;
@@ -707,6 +730,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -848,6 +872,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -859,6 +884,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = DemoApp;
@@ -989,6 +1015,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1000,6 +1027,7 @@
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_TARGET_NAME = DemoApp;
@@ -1122,6 +1150,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				GENERATE_INFOPLIST_FILE = YES;

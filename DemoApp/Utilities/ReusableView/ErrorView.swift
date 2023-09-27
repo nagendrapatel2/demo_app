@@ -13,7 +13,9 @@ struct ErrorView: View {
             Text("⚠️ \(errorMessage)")
                 .multilineTextAlignment(.center)
                 .padding()
+                .accessibilityIdentifier("errorText")
         }
         .padding()
+        
     }
 }

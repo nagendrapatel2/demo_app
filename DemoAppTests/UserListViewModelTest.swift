@@ -10,7 +10,6 @@ import XCTest
 final class DemoAppTests: XCTestCase {
     var sut : UserListViewModel!
     
-    
     @MainActor func testGetUserListWithSuccess() async {
         //Given
         sut = UserListViewModel(userListWebService: MockUserListService(resultForResponse: .success([User.preview])), state: .idle)
@@ -75,17 +74,3 @@ final class DemoAppTests: XCTestCase {
         sut = nil
     }
 }
-
-struct MockUserListService : UserListRepository {
-    var session: URLSession = .shared
-    var baseURL: String = ""
-    var resultForResponse : Result <[User] ,Error> = .success([])
-    func fetchUserList() async throws -> [User] {
-        try resultForResponse.get()
-    }
-}
-
-enum MockError : Error {
-    case error
-}
-

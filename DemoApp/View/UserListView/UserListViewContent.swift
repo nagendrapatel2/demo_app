@@ -12,9 +12,9 @@ struct UserListViewContent: View {
         NavigationStack {
             List {
                 ForEach(userListViewModel.usersList) { user in
-                    UserListCellView(user: user)
+                    UserListCellView(user: user).accessibilityIdentifier("userListCell")
                 }
-            }
+            }.accessibilityIdentifier("userlist")
             .refreshable(action: userListViewModel.refreshData)
             .navigationBarTitle(Text("User List"))
         }

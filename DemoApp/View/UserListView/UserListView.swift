@@ -7,7 +7,25 @@
 
 import SwiftUI
 struct UserListView: View {
-    @StateObject  var userListViewModel = UserListViewModel()
+    @StateObject  var userListViewModel : UserListViewModel
+    init(){
+        #if DEBUG
+        if UITestingHelper.isUITesting {
+            
+            let mockData = UITestingHelper.isNetworkSuccess ? MockUserListService() :MockUserListService(resultForResponse: .failure(APIError.invalidURL))
+            
+            _userListViewModel = StateObject(wrappedValue: UserListViewModel(userListWebService: mockData,state: .idle))
+        }
+        else if UITestingHelper.isPreview {
+            _userListViewModel = StateObject(wrappedValue: UserListViewModel(userListWebService: MockUserListService(),state: .idle))
+           
+        }else{
+            _userListViewModel = StateObject(wrappedValue: UserListViewModel())
+        }
+        #else
+        _userListViewModel = StateObject(wrappedValue: UserListViewModel())
+        #endif
+    }
     var body: some View {
         switch userListViewModel.state {
                case .idle:
@@ -15,15 +33,15 @@ struct UserListView: View {
                 case .loading:
                     ProgressView()
                 case .failed(let error):
-                    ErrorView(errorMessage: userListViewModel.getErrorMessage(for: error))
+                    ErrorView(errorMessage: userListViewModel.getErrorMessage(for: error)).accessibilityIdentifier("errorView")
                 case .loaded:
-                    UserListViewContent(userListViewModel: userListViewModel)
+            UserListViewContent(userListViewModel: userListViewModel).accessibilityIdentifier("userViewContent")
                 }
     }
 }
 
 struct UserListView_Previews: PreviewProvider {
     static var previews: some View {
-        UserListView(userListViewModel: PreviewData(userList: [User.preview], state: .loaded))
+        UserListView()
     }
 }
