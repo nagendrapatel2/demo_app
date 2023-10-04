@@ -10,14 +10,13 @@ struct UserListView: View {
     @StateObject  var userListViewModel : UserListViewModel
     var body: some View {
         switch userListViewModel.state {
-               
-                case .loading:
-                    ProgressView()
-                case .failed(let error):
-                    ErrorView(errorMessage: userListViewModel.getErrorMessage(for: error)).accessibilityIdentifier("errorView")
-                case .loaded:
+        case .loading:
+            ProgressView()
+        case .failed(let error):
+            ErrorView(errorMessage: userListViewModel.getErrorMessage(for: error)).accessibilityIdentifier("errorView")
+        case .loaded:
             UserListViewContent(userListViewModel: userListViewModel).accessibilityIdentifier("userViewContent")
-                }
+        }
     }
 }
 
@@ -29,7 +28,7 @@ struct UserListView_Previews: PreviewProvider {
 
 extension UserListView {
     init() {
-        #if DEBUG
+#if DEBUG
         if UITestingHelper.isUITesting {
             
             let mockData = UITestingHelper.isNetworkSuccess ? MockUserListService() :MockUserListService(resultForResponse: .failure(APIError.invalidURL))
@@ -38,12 +37,12 @@ extension UserListView {
         }
         else if UITestingHelper.isPreview {
             _userListViewModel = StateObject(wrappedValue: UserListViewModel(userListWebService: MockUserListService()))
-           
+            
         }else{
             _userListViewModel = StateObject(wrappedValue: UserListViewModel())
         }
-        #else
+#else
         _userListViewModel = StateObject(wrappedValue: UserListViewModel())
-        #endif
+#endif
     }
 }

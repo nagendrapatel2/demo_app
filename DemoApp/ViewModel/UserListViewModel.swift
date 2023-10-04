@@ -9,7 +9,7 @@ import SwiftUI
 import Combine
 class UserListViewModel : ObservableObject {
     @Published  var usersList = [User]()
-    @Published  var state : LoadingState<Void> = .loading
+    @Published private (set) var state : LoadingState<Void> = .loading
     var userListWebService :  UserListRepository
     init(userListWebService :  UserListRepository =  UserListWebService()) {
         self.userListWebService = userListWebService

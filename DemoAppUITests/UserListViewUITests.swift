@@ -36,6 +36,8 @@ final class UserListViewUITests: XCTestCase {
         XCTAssertTrue(cell.exists)
         let userName = cell.staticTexts["Kayla Lopez"]
         XCTAssertTrue(userName.exists)
+        let mobile = cell.staticTexts["800-865-4932"]
+        XCTAssertTrue(mobile.exists)
     }
     
     func testUserListDetailViewGetSuccess(){
