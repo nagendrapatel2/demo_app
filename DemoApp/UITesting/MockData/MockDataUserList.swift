@@ -20,4 +20,14 @@ enum MockError : Error {
     case error
 }
 
+struct MockAPIClient: APIClient {
+    var path: String
+    var method: String
+    var headers: [String: String]?
+    func body() throws -> Data? {
+        // Implement this function as needed for testing
+        return nil
+    }
+}
+
 #endif
