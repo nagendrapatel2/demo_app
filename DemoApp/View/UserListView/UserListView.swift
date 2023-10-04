@@ -8,28 +8,9 @@
 import SwiftUI
 struct UserListView: View {
     @StateObject  var userListViewModel : UserListViewModel
-    init(){
-        #if DEBUG
-        if UITestingHelper.isUITesting {
-            
-            let mockData = UITestingHelper.isNetworkSuccess ? MockUserListService() :MockUserListService(resultForResponse: .failure(APIError.invalidURL))
-            
-            _userListViewModel = StateObject(wrappedValue: UserListViewModel(userListWebService: mockData,state: .idle))
-        }
-        else if UITestingHelper.isPreview {
-            _userListViewModel = StateObject(wrappedValue: UserListViewModel(userListWebService: MockUserListService(),state: .idle))
-           
-        }else{
-            _userListViewModel = StateObject(wrappedValue: UserListViewModel())
-        }
-        #else
-        _userListViewModel = StateObject(wrappedValue: UserListViewModel())
-        #endif
-    }
     var body: some View {
         switch userListViewModel.state {
-               case .idle:
-                    Color.clear.task { userListViewModel.refreshData()}
+               
                 case .loading:
                     ProgressView()
                 case .failed(let error):
@@ -43,5 +24,26 @@ struct UserListView: View {
 struct UserListView_Previews: PreviewProvider {
     static var previews: some View {
         UserListView()
+    }
+}
+
+extension UserListView {
+    init() {
+        #if DEBUG
+        if UITestingHelper.isUITesting {
+            
+            let mockData = UITestingHelper.isNetworkSuccess ? MockUserListService() :MockUserListService(resultForResponse: .failure(APIError.invalidURL))
+            
+            _userListViewModel = StateObject(wrappedValue: UserListViewModel(userListWebService: mockData))
+        }
+        else if UITestingHelper.isPreview {
+            _userListViewModel = StateObject(wrappedValue: UserListViewModel(userListWebService: MockUserListService()))
+           
+        }else{
+            _userListViewModel = StateObject(wrappedValue: UserListViewModel())
+        }
+        #else
+        _userListViewModel = StateObject(wrappedValue: UserListViewModel())
+        #endif
     }
 }

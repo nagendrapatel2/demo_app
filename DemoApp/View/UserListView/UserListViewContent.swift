@@ -16,13 +16,13 @@ struct UserListViewContent: View {
                 }
             }.accessibilityIdentifier("userlist")
             .refreshable(action: userListViewModel.refreshData)
-            .navigationBarTitle(Text("User List"))
+            .navigationBarTitle(Text(Constants.StringTitle.userListTitle))
         }
     }
 }
 
 struct UserListViewContent_Previews: PreviewProvider {
     static var previews: some View {
-        UserListViewContent(userListViewModel: PreviewData(userList: [User.preview]))
+        UserListViewContent(userListViewModel: UserListViewModel(userListWebService: MockUserListService()))
     }
 }

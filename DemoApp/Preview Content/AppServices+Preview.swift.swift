@@ -139,10 +139,3 @@ extension PreviewNetwork {
 }
 
 
-class PreviewData : UserListViewModel {
-    init(userList : [User],state : LoadingState<Void> = LoadingState<Void>.idle) {
-        super.init(userListWebService: MockUserListService())
-        self.usersList = userList
-        self.state = state
-    }
-}

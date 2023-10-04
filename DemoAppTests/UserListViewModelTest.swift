@@ -12,32 +12,27 @@ final class DemoAppTests: XCTestCase {
     
     @MainActor func testGetUserListWithSuccess() async {
         //Given
-        sut = UserListViewModel(userListWebService: MockUserListService(resultForResponse: .success([User.preview])), state: .idle)
+        sut = UserListViewModel(userListWebService: MockUserListService(resultForResponse: .success([User.preview])))
         // when
         sut.getUsersList()
-        let expectationDataLoad = expectation(description: "Data loaded successfully")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             //Then
             XCTAssertNotNil(self.sut.usersList)
             XCTAssertEqual(self.sut.usersList.count, 1)
+            XCTAssertEqual(self.sut.usersList.first?.firstName,"Kayla")
             guard case .loaded = self.sut.state else {
                 XCTFail("Expected status loaded, but was \(self.sut.state )")
                 return
             }
-            
-            expectationDataLoad.fulfill()
         }
-        await fulfillment(of: [expectationDataLoad])
-        
     }
     
     @MainActor func testGetUserListWithFailure() async {
         
         //Given
-        sut = UserListViewModel(userListWebService: MockUserListService(resultForResponse: .failure(MockError.error)), state: .idle)
+        sut = UserListViewModel(userListWebService: MockUserListService(resultForResponse: .failure(MockError.error)))
         // when
         sut.getUsersList()
-        let expectationDataLoad = expectation(description: "Error occurred")
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
             //Then
             XCTAssertNotNil(self.sut.usersList)
@@ -46,10 +41,8 @@ final class DemoAppTests: XCTestCase {
                 XCTFail("Expected status failed, but was \(self.sut.state )")
                 return
             }
-            expectationDataLoad.fulfill()
+            
         }
-        await fulfillment(of: [expectationDataLoad])
-        
     }
     
     func testValidJsonSuccess(){

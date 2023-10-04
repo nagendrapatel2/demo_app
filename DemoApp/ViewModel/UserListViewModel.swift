@@ -9,15 +9,15 @@ import SwiftUI
 import Combine
 class UserListViewModel : ObservableObject {
     @Published  var usersList = [User]()
-    @Published  var state : LoadingState<Void>
+    @Published  var state : LoadingState<Void> = .loading
     var userListWebService :  UserListRepository
-    init(userListWebService :  UserListRepository =  UserListWebService(),state : LoadingState<Void> = .idle ) {
+    init(userListWebService :  UserListRepository =  UserListWebService()) {
         self.userListWebService = userListWebService
-        self.state = state
+        getUsersList()
     }
     //get userList data from Server
     func getUsersList()  {
-         Task { @MainActor in
+        Task { @MainActor in
             state = .loading
             do {
                 usersList = try await userListWebService.fetchUserList()
@@ -25,12 +25,11 @@ class UserListViewModel : ObservableObject {
             } catch (let error){
                 state = .failed(error)
             }
-     }
+        }
     }
     func getErrorMessage(for error: Error) -> String {
-            // Implement error message handling here, if needed
-            return "An error occurred: \(error.localizedDescription)"
-        }
+        return "An error occurred: \(error.localizedDescription)"
+    }
     // refresh Data
     @Sendable
     func refreshData() {

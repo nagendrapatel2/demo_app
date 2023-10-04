@@ -13,7 +13,7 @@ protocol UserListRepository: WebRepository {
 
 struct UserListWebService: UserListRepository {
     
-    let baseURL: String = AppEnvironment.baseURL + "/v1/sample-data"
+    let baseURL: String = AppEnvironment.baseURL
     let session: URLSession
     init(session: URLSession = .shared) {
         self.session = session
@@ -32,13 +32,12 @@ extension UserListWebService {
         var path: String {
             switch self {
             case .fetchUserList:
-                return "/users"
-                
+                return   Constants.APIEndPoint.users
             }
         }
         var method: String {
             switch self {
-            case .fetchUserList: return "GET"
+            case .fetchUserList: return Constants.RequestMethod.get
             }
         }
         var headers: [String : String]? {
